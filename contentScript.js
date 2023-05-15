@@ -3,8 +3,11 @@ function replaceUsernamesInThreadList() {
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
         var parent = element.parentElement;
-        if (parent.previousElementSibling && parent.previousElementSibling.previousElementSibling) {
-            parent.previousElementSibling.previousElementSibling.style.display = 'none';
+        if (!parent) 
+            continue;
+        var parentParent = parent.parentElement;
+        if (parentParent && parentParent.firstChild) {
+            parentParent.firstChild.style.display = 'none';
         }
     }
 }
