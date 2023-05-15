@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "LIHKG Username Hider",
+    "description": "This extension hides usernames on LIHKG as they are becoming annoying/insulting to other users.",
+    "version": "1.0",
+    "permissions": ["scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://lihkg.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ]
+}
+    
