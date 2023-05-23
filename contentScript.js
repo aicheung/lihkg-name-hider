@@ -1,11 +1,11 @@
 function replaceUsernamesInThreadList() {
-    var elements = document.querySelectorAll('i.i-thumb-down, i.i-thumb-up');
+    var elements = document.querySelectorAll('i.i-menu-down');
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
         var parent = element.parentElement;
         if (!parent) 
             continue;
-        var parentParent = parent.parentElement;
+        var parentParent = parent.previousElementSibling;
         if (parentParent && parentParent.firstChild) {
             parentParent.firstChild.style.display = 'none';
         }
